@@ -1,0 +1,7 @@
+[core]
+	excludesfile = ~/.gitignore
+[push]
+	default = matching
+[user]
+	name = Roman Zolin
+	email = rzolin@gmail.com
