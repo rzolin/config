@@ -1,4 +1,4 @@
-#update
+update
 install brew-cask
 install git
 install git-flow
@@ -34,8 +34,7 @@ cask install android-studio
 cask install android-studio-bundle
 cask install genymotion
 cask install sourcetree
-cask install prey
-cast install ngrok
-cast install nocturne
-cast install path-finder
+cask install ngrok
+cask install nocturne
+cask install path-finder
 cleanup
