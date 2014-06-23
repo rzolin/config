@@ -1,4 +1,5 @@
 update
+tap caskroom/cask
 install brew-cask
 install git
 install git-flow
@@ -14,6 +15,7 @@ cask install appcode
 cask install phpstorm
 cask install rubymine
 cask install intellij-idea
+cask install charles
 cask install onepassword
 cask install spotify
 cask install spotify-menubar
