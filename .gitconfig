@@ -1,7 +1,17 @@
 [core]
-	excludesfile = ~/.gitignore
+   excludesfile = /Users/rzolin/.gitignore
 [push]
-	default = matching
+   default = matching
 [user]
-	name = Roman Zolin
-	email = rzolin@gmail.com
+   name = Roman Zolin
+   email = rzolin@gmail.com
+[difftool "sourcetree"]
+   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+   path =
+[mergetool "sourcetree"]
+   cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.9.4.1/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+   trustExitCode = true
+[alias]
+   lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+   co = checkout
+   br = branch

@@ -5,7 +5,11 @@ export LANG=ru_RU.UTF-8
 export JAVA_HOME=$(/usr/libexec/java_home)
 export RBENV_ROOT=/usr/local/var/rbenv
 export PGDATA="/usr/local/var/postgres"
-
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export DOCKER_HOST=tcp://localhost:2375
+export DOCKER_MEMORY=2048
+export DOCKER_CPUS=2
 
 #set meta-flag on
 #set input-meta on
@@ -30,7 +34,7 @@ export LSCOLORS=Exfxcxdxbxegedabagacad
 
 # Home IP - 66.44.49.187
 
-alias sshHome='ssh rzolin@rzolinmini.zapto.org'
+alias sshHome='ssh rzolin@rzolin.net'
 alias ssfHome='sshfs / rzolin@rzolinmini.zapto.org'
 alias mountMini='sshfs rzolin@rzolinmini.zapto.org: ~/temp'
 alias sshMob='ssh rzolin@74.9.152.221'
@@ -58,6 +62,10 @@ alias gitReload="gitUnload; gitLoad;"
 alias cdPockitshipNode="cd /var/www/pockitship/app"
 alias runPockitshipNode="cd /var/www/pockitship/app && nodemon ./bin/www"
 alias restartPockitshipNode="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.nodejs.pockitship.plist && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nodejs.pockitship.plist"
+alias startPonyDebugger="ponyd serve --listen-interface=127.0.0.1"
+alias startATServer='cd ~/Projects/ArmorText/Server/armortext-server-sandbox-spring-boot/; vagrant up; vagrant ssh'
+alias cdLT='cd /Users/rzolin/Projects/Web/LittleTouches'
+alias runAT='cd ~/Projects/ArmorText/Server; mvn clean package -DskipTests spring-boot:run -pl armortext-server-sandbox-spring-boot'
 
 if [ -f "$HOME/.bash_ps1" ]; then
 . "$HOME/.bash_ps1"
