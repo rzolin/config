@@ -4,9 +4,19 @@ tap caskroom/versions
 install brew-cask
 install git
 install git-flow
+install git-extras
 install node
+install npm
 install mongodb
 install docker
+install boot2docker
+install gradle
+install zsh
+install nmap
+install macvim
+install vim
+install autojump
+install fasd
 cask install alfred
 cask install google-chrome
 cask install firefox
@@ -25,18 +35,16 @@ cask install vagrant
 cask install vagrant-manager
 cask install bettertouchtool
 cask install macvim
-cask install quicksilver
 cask install dropbox
 cask install google-drive
 cask install sublime-text
 cask install testflight
 cask install r
 cask install rstudio
-cask install android-studio
-cask install android-studio-bundle
 cask install genymotion
 cask install sourcetree
 cask install ngrok
 cask install nocturne
 cask install path-finder
+cask install mamp
 cleanup

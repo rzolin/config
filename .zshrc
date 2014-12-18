@@ -1,53 +1,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-export PATH="/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/libexec/java_home:$PATH"
-export DEVELOPER_DIR="/Applications/XCode.app/Contents/Developer"
-export LANG=ru_RU.UTF-8
-export JAVA_HOME=$(/usr/libexec/java_home)
-export RBENV_ROOT=/usr/local/var/rbenv
-export PGDATA="/usr/local/var/postgres"
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export DOCKER_HOST=tcp://localhost:2375
-export DOCKER_MEMORY=2048
-export DOCKER_CPUS=2
-
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias sshHome='ssh rzolin@rzolin.net'
-alias ssfHome='sshfs / rzolin@rzolinmini.zapto.org'
-alias mountMini='sshfs rzolin@rzolinmini.zapto.org: ~/temp'
-alias sshMob='ssh rzolin@74.9.152.221'
-alias sshEbt='ssh roman@209.190.246.82'
-alias sshSquash='ssh roma@192.168.32.141'
-alias ls='ls -GFha'
-alias b2='boot2docker'
-alias sync='rsync -rtvupP'
-alias cleanSVN='find . -name .svn -print0 | xargs -0 rm -rf'
-alias symbolicate="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/
-PrivateFrameworks/DTDeviceKit.framework/Versions/A/Resources/symbolicatecrash -v"
-alias xctool='~/UTIL/xctool/xctool.sh'
-alias cdMyTwoCents='cd ~/Projects/My02c/my02c/Frontend/IPhone/MyTwoCents/'
-alias cdMySasha='cd /Users/rzolin/Projects/My02c/sasha'
-alias cdMyAnd='cd /Users/rzolin/AndroidStudioProjects/My02Cents'
-alias vimNginx="sudo vim /usr/local/etc/nginx/nginx.conf"
-alias nginxRestart="sudo nginx -s stop; sudo nginx;"
-alias startPonyDebugger="ponyd serve --listen-interface=127.0.0.1"
-alias startATServer='cd ~/Projects/ArmorText/Server/armortext-server-sandbox-spring-boot/; vagrant up; vagrant ssh'
-alias cdLT='cd /Users/rzolin/Projects/Web/LittleTouches'
-alias runAT='cd ~/Projects/ArmorText/Server; mvn clean package -DskipTests spring-boot:run -pl armortext-server-sandbox-spring-boot'
-alias cdATiPhone='cd ~/Projects/ArmorText/IOS/iPhone'
-
+#{{{ Settings
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -64,8 +24,8 @@ alias cdATiPhone='cd ~/Projects/ArmorText/IOS/iPhone'
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to disable command auto-correction.
-DISABLE_CORRECTION="true"
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -83,36 +43,111 @@ DISABLE_CORRECTION="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+#}}}
+
+
+#{{{ ZSH Settings
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow docker mvn npm pod sublimes)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(brew git git-flow git-extras gradle docker mvn node npm pod sublimes vagrant composer syfony2 osx pod bower fasd common-aliases)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+#}}}
 
 
-# Prompt line
+#{{{ Aliases
+
+alias sshHome='ssh rzolin@rzolin.net'
+alias ssfHome='sshfs / rzolin@rzolinmini.zapto.org'
+alias mountMini='sshfs rzolin@rzolinmini.zapto.org: ~/temp'
+alias sshMob='ssh rzolin@74.9.152.221'
+alias sshEbt='ssh roman@209.190.246.82'
+alias sshSquash='ssh roma@192.168.32.141'
+alias ls='ls -GFha'
+alias b2='boot2docker'
+alias sync='rsync -rtvupP'
+alias cleanSVN='find . -name .svn -print0 | xargs -0 rm -rf'
+alias xctool='~/UTIL/xctool/xctool.sh'
+alias cdMyTwoCents='cd ~/Projects/My02c/my02c-ios'
+alias cdMySasha='cd /Users/rzolin/Projects/My02c/sasha'
+alias cdMyAnd='cd /Users/rzolin/AndroidStudioProjects/My02Cents'
+alias vimNginx="sudo vim /usr/local/etc/nginx/nginx.conf"
+alias nginxRestart="sudo nginx -s stop; sudo nginx;"
+alias startPonyDebugger="ponyd serve --listen-interface=127.0.0.1"
+alias startATServer='cd ~/Projects/ArmorText/Server/armortext-server-sandbox-spring-boot/; vagrant up; vagrant ssh'
+alias cdLT='cd /Users/rzolin/Projects/Web/LittleTouches'
+alias runAT='cd ~/Projects/ArmorText/Server;  mvn clean install -DskipTests && mvn spring-boot:run -pl armortext-server-base-app'
+alias cdATMessenger='cd ~/Projects/ArmorText/IOS/Messenger'
+alias cdATSDK='cd ~/Projects/ArmorText/IOS/SDK'
+alias cdATAndroid='cd ~/Projects/ArmorText/Android'
+alias cdATAudit='cd ~/Projects/ArmorText/Audit'
+alias runPonyD='ponyd serve -i 0.0.0.0'
+alias cdLT='cd ~/Projects/Web/LT'
+alias cdLTpackage='cd ~/Projects/Web/LT/packages/custom/lt'
+alias watchLT='cdLT; cd packages/custom/lt; compass watch'
+alias idiff='/Applications/IntelliJ\ IDEA\ 14.app/Contents/MacOS/idea diff $'
+
+#}}}
+
+
+
+# thanks to:  http://blog.blindgaenger.net/colorize_maven_output.html
+# and: http://johannes.jakeapp.com/blog/category/fun-with-linux/200901/maven-colorized
+# Colorize Maven Output
+alias maven="command mvn"
+function color_maven() {
+local BLUE="[0;34m"
+local RED="[0;31m"
+local LIGHT_RED="[1;31m"
+local LIGHT_GRAY="[0;37m"
+local LIGHT_GREEN="[1;32m"
+local LIGHT_BLUE="[1;34m"
+local LIGHT_CYAN="[1;36m"
+local YELLOW="[1;33m"
+local WHITE="[1;37m"
+local NO_COLOUR="[0m"
+maven "$@" | sed \
+   -e "s/----/${LIGHT_CYAN}----/g" \
+   -e "s/[Ww]arning:/${LIGHT_GREEN}warning:$NO_COLOUR/g" \
+   -e "s/Tests run: \([^,]*\), Failures: \([^,]*\), Errors: \([^,]*\), Skipped: \([^,]*\)/${LIGHT_GREEN}Tests run: \1$NO_COLOUR, Failures: $RED\2$NO_COLOUR, Errors: $YELLOW\3$NO_COLOUR, Skipped: $LIGHT_BLUE\4$NO_COLOUR/g" \
+   -e "s/\(\[\{0,1\}WARN\(ING\)\{0,1\}\]\{0,1\}.*\)/$YELLOW\1$NO_COLOUR/g" \
+   -e "s/\(\[ERROR\].*\)/$RED\1$NO_COLOUR/g" \
+   -e "s/\(\(BUILD \)\{0,1\}FAILURE.*\)/$RED\1$NO_COLOUR/g" \
+   -e "s/\(\(BUILD \)\{0,1\}SUCCESS.*\)/$LIGHT_GREEN\1$NO_COLOUR/g" \
+   -e "s/\(\[INFO\].*\)/$LIGHT_GRAY\1$NO_COLOUR/g"
+return $PIPESTATUS
+}
+
+alias mvn=color_maven
+alias maven=/usr/local/bin/mvn
+
+
+get_adb_db() {
+   adb shell "run-as co.armortext.android.$1 chmod 666 databases/armortext_messenger.db"
+   adb pull /data/data/co.armortext.android.$1/databases/armortext_messenger.db armortext_$1.db
+
+}
+
+alias adb_db=get_adb_db
+
+# AutoJump enabling
+[[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
+
+#{{{ Prompt line
+
 # build b/w prompt for git and vertial env
 [[ ! -z $GIT_BRANCH ]] &&PS1_GIT=" (git: ${GIT_BRANCH})"
 [[ ! -z $VIRTUAL_ENV ]] &&PS1_VENV=" (venv: ${VIRTUAL_ENV#$WORKON_HOME})"
@@ -124,3 +159,4 @@ FILL="${FILL}${color_off}"
 # set new color prompt
 PS1="${FILL}$PS1"
 
+#}}}

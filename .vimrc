@@ -1,5 +1,7 @@
 "{{{Auto Commands
 
+set clipboard=unnamed
+
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
@@ -109,13 +111,19 @@ set nohidden
 
 " Set off the other paren
 highlight MatchParen ctermbg=4
+
+" Following three lines remove the auto copy function from VIM
+   set guioptions-=a
+   set guioptions-=A
+   set guioptions-=aA
+
 " }}}
 
 "{{{Look and Feel
 
 " Favorite Color Scheme
 "if has("gui_running")
-"   colorscheme inkpot
+"   colorscheme mirodark
 "   " Remove Toolbar
 "   set guioptions-=T
 "   "Terminus is AWESOME
@@ -123,6 +131,7 @@ highlight MatchParen ctermbg=4
 "else
 "   colorscheme metacosm
 "endif
+
 
 "Status line gnarliness
 set laststatus=2
@@ -144,5 +153,22 @@ endfunction
 
 "}}}
 
+execute pathogen#infect()
 filetype plugin indent on
 syntax on
+
+"{{{ NERD TREE
+
+autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+"}}}
+
+"{{{ SPLIT NAVIGATION
+
+nnoremap <C-Down> <C-W><C-J>
+nnoremap <C-Up> <C-W><C-K>
+nnoremap <C-Right> <C-W><C-L>
+nnoremap <C-Left> <C-W><C-H>
+
+"}}}
