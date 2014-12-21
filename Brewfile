@@ -17,7 +17,9 @@ install macvim
 install vim
 install autojump
 install fasd
+install android-sdk
 cask install alfred
+cask install istat-menus
 cask install google-chrome
 cask install firefox
 cask install skype
@@ -28,7 +30,7 @@ cask install phpstorm
 cask install rubymine
 cask install intellij-idea
 cask install charles
-cask install onepassword
+cask install 1password
 cask install unrarx
 cask install virtualbox
 cask install vagrant
@@ -47,4 +49,7 @@ cask install ngrok
 cask install nocturne
 cask install path-finder
 cask install mamp
+cask install mongodb
+cask install java6
+cask install java7
 cleanup
