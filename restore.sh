@@ -17,42 +17,27 @@ gIt clone git@github.com:rzolin/config.git ~/config
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/boneyard
 brew bundle
-android update sdk -u -a
+
+# === Mongo DB Setup
+sudo mkdir -p /data/db
+sudo chmod -R 775 /data
+ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+
+./sync.sh
 
 expect -c '
 set timeout -1;
 spawn android - update sdk --no-ui -u -a;
 expect {
-    "Do you accept the license" { exp_send "y\r" ; exp_continue }
-    eof
+    "Do you accept the license" { exp_send "y\r" ; exp_continue  }
+        eof
+
 }
 '
 
-mkdir -p /data/db
-sudo chmod -R 775 /data
+sudo gem install compass
 
-cd /Volumes/Backup/Backups.backupdb/Roman’s\ MacBook\ Pro/Latest/Macintosh\ HD/Users/rzolin/
+npm install mean -g
+npm install bower -g
 
-sync -a ./Projects ~/
-sync -a ./UTIL ~/
-sync -a ./tmp2 ~/
-sync -a ./Documents/ ~/Documents/
-sync -a ./Pictures/ ~/Pictures/
-
-sync -a ./.appCode31 ~/
-sync -a ./.httpie ~/
-sync -a ./.IntelliJIdea14 ~/
-
-sync -a ./.bash_history ~/
-sync -a ./.bash_profile ~/
-sync -a ./.bash_ps1 ~/
-sync -a ./.bashrc ~/
-sync -a ./.fasd ~/
-sync -a ./.fasd-init-cache ~/
-sync -a ./.git-credentials ~/
-sync -a ./.gitconfig ~/
-sync -a ./.gitignore ~/
-sync -a ./.ideavimrc ~/
-sync -a ./.sqliterc ~/
-sync -a ./.viminfo ~/
-sync -a ./.vimrc ~/

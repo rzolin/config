@@ -18,6 +18,7 @@ install macvim
 install vim
 install autojump
 install fasd
+install maven
 install android-sdk
 cask install alfred
 cask install istat-menus
@@ -30,6 +31,7 @@ cask install appcode
 cask install phpstorm
 cask install rubymine
 cask install intellij-idea
+cask install android-studio
 cask install charles
 cask install 1password
 cask install unrarx
