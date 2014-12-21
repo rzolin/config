@@ -1,4 +1,5 @@
 update
+appstore xcode
 tap caskroom/cask
 tap caskroom/versions
 install brew-cask
