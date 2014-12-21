@@ -28,6 +28,8 @@ expect {
 }
 '
 
+mkdir -p /data/db
+sudo chmod -R 775 /data
 
 cd /Volumes/Backup/Backups.backupdb/Roman’s\ MacBook\ Pro/Latest/Macintosh\ HD/Users/rzolin/
 
