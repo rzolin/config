@@ -7,6 +7,9 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
+# AutoJump enabling
+[[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
+
 #{{{ Settings
 
 # Uncomment the following line to use case-sensitive completion.
@@ -70,6 +73,21 @@ ZSH_THEME="robbyrussell"
 
 #{{{ Aliases
 
+function da () {
+    docker exec -it $1 bash
+}
+
+alias drm="docker rm"
+alias drmi="docker rmi"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias di="docker images"
+
+
+alias gfs='git flow feature start'
+alias gff='git flow feature finish'
+alias gfp='git flow feature publish'
+alias gcb='gradle clean build'
 alias sshHome='ssh rzolin@rzolin.net'
 alias ssfHome='sshfs / rzolin@rzolinmini.zapto.org'
 alias mountMini='sshfs rzolin@rzolinmini.zapto.org: ~/temp'
@@ -99,10 +117,12 @@ alias cdLT='cd ~/Projects/Web/LT'
 alias cdLTpackage='cd ~/Projects/Web/LT/packages/custom/lt'
 alias watchLT='cdLT; cd packages/custom/lt; compass watch'
 alias idiff='/Applications/IntelliJ\ IDEA\ 14.app/Contents/MacOS/idea diff $'
-
+alias runLTDocker='docker run -t -i -p 80:3000 lt /bin/bash'
+alias buildLTDocker='docker build -t lt ~/Projects/Web/LT_Docker/'
 #}}}
 
 
+#{{{ Maven Colors
 
 # thanks to:  http://blog.blindgaenger.net/colorize_maven_output.html
 # and: http://johannes.jakeapp.com/blog/category/fun-with-linux/200901/maven-colorized
@@ -134,6 +154,10 @@ return $PIPESTATUS
 alias mvn=color_maven
 alias maven=/usr/local/bin/mvn
 
+#}}}
+
+
+#{{{ Android Commands and Aliases
 
 get_adb_db() {
    adb shell "run-as co.armortext.android.$1 chmod 666 databases/armortext_messenger.db"
@@ -143,8 +167,8 @@ get_adb_db() {
 
 alias adb_db=get_adb_db
 
-# AutoJump enabling
-[[ -s `brew --prefix`/etc/autojump.sh  ]] && . `brew --prefix`/etc/autojump.sh
+#}}}
+
 
 #{{{ Prompt line
 
@@ -160,3 +184,6 @@ FILL="${FILL}${color_off}"
 PS1="${FILL}$PS1"
 
 #}}}
+
+# Docker init
+$(b2 shellinit)
