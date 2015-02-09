@@ -44,6 +44,7 @@ cask install dropbox
 cask install google-drive
 cask install sublime-text
 cask install testflight
+cask install spotify
 cask install r
 cask install rstudio
 cask install genymotion
