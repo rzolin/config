@@ -12,7 +12,7 @@ sync -a ./.zshrc ~/
 sync -a ./.zshrc-e ~/
 
 cd ~
-gIt clone git@github.com:rzolin/config.git ~/config
+git clone git@github.com:rzolin/config.git ~/config
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/boneyard

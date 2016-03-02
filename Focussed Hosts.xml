@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<?charles serialisation-version='2.0' ?>
+<focus>
+  <hosts>
+    <locationPatterns>
+      <locationMatch>
+        <location>
+          <host>rzat.ngrok.com</host>
+        </location>
+        <enabled>true</enabled>
+      </locationMatch>
+      <locationMatch>
+        <location>
+          <host>localhost.</host>
+        </location>
+        <enabled>true</enabled>
+      </locationMatch>
+      <locationMatch>
+        <location>
+          <host>lab.armortext.co</host>
+        </location>
+        <enabled>true</enabled>
+      </locationMatch>
+      <locationMatch>
+        <location>
+          <host>pilot.armortext.co</host>
+        </location>
+        <enabled>true</enabled>
+      </locationMatch>
+      <locationMatch>
+        <location>
+          <host>app.armortext.co</host>
+        </location>
+        <enabled>true</enabled>
+      </locationMatch>
+      <locationMatch>
+        <location>
+          <host>demo.armortext.co</host>
+        </location>
+        <enabled>true</enabled>
+      </locationMatch>
+      <locationMatch>
+        <location>
+          <host>*.my02c-app.appspot.com</host>
+        </location>
+        <enabled>true</enabled>
+      </locationMatch>
+    </locationPatterns>
+  </hosts>
+</focus>
