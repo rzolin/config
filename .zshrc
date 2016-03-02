@@ -77,12 +77,21 @@ function da () {
     docker exec -it $1 bash
 }
 
+function brewUpgrade () {
+   brew doctor
+   brew update
+   brew upgrade
+   for c in `brew cask list`; do ! brew cask info $c | grep -qF 'Not installed' || brew cask install $c; done
+   brew cleanup
+}
+
 alias drm="docker rm"
 alias drmi="docker rmi"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias di="docker images"
 
+alias bu=brewUpgrade
 
 alias gfs='git flow feature start'
 alias gff='git flow feature finish'
@@ -106,6 +115,7 @@ alias vimNginx="sudo vim /usr/local/etc/nginx/nginx.conf"
 alias nginxRestart="sudo nginx -s stop; sudo nginx;"
 alias startPonyDebugger="ponyd serve --listen-interface=127.0.0.1"
 alias startATServer='cd ~/Projects/ArmorText/Server/armortext-server-sandbox-spring-boot/; vagrant up; vagrant ssh'
+alias -='cd -'
 alias cdLT='cd /Users/rzolin/Projects/Web/LittleTouches'
 alias runAT='cd ~/Projects/ArmorText/Server;  mvn clean install -DskipTests && mvn spring-boot:run -pl armortext-server-base-app'
 alias cdATMessenger='cd ~/Projects/ArmorText/IOS/Messenger'
@@ -119,6 +129,14 @@ alias watchLT='cdLT; cd packages/custom/lt; compass watch'
 alias idiff='/Applications/IntelliJ\ IDEA\ 14.app/Contents/MacOS/idea diff $'
 alias runLTDocker='docker run -t -i -p 80:3000 lt /bin/bash'
 alias buildLTDocker='docker build -t lt ~/Projects/Web/LT_Docker/'
+alias dm='docker-machine'
+alias dps='docker ps -a'
+alias dim='docker images -a'
+alias drmc='docker rm -f'
+alias drmi='docker rmi -f'
+alias drun='docker run -itPp 3000:3000'
+alias vca='vcsh config add'
+alias vcc='vcsh config commit'
 #}}}
 
 
@@ -181,9 +199,12 @@ local FILL=$color_gray
 while [ $fillsize -gt 0 ]; do FILL="${FILL}."; fillsize=$(($fillsize-1)); done
 FILL="${FILL}${color_off}"
 # set new color prompt
-PS1="${FILL}$PS1"
+NEWLINE=$'\n'
+PS1="${FILL}${NEWLINE}$PS1"
 
 #}}}
 
 # Docker init
 $(b2 shellinit)
+
+[ -s "/Users/rzolin/.scm_breeze/scm_breeze.sh" ] && source "/Users/rzolin/.scm_breeze/scm_breeze.sh"
