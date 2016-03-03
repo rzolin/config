@@ -1,0 +1,5 @@
+ssh://collab.armortext.co:7999/atc/armortext-android.git
+ssh://collab.armortext.co:7999/atc/armortext-java-client-sdk.git
+ssh://git@collab.armortext.co:7999/atc/armortext-audit-tool.git
+ssh://git@collab.armortext.co:7999/atc/armortext-messenger-ios.git
+ssh://git@collab.armortext.co:7999/atc/armortext-messenger-sdk-ios.git
