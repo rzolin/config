@@ -1,7 +1,6 @@
 
 # tap repositories and their packages
 
-tap caskroom/cask
 cask '1password'
 cask 'adium'
 cask 'alfred'
@@ -23,7 +22,6 @@ cask 'mongodb'
 cask 'ngrok'
 cask 'nocturne'
 cask 'path-finder'
-cask 'python3'
 cask 'rstudio'
 cask 'skype'
 cask 'sourcetree'
@@ -33,7 +31,7 @@ cask 'vagrant-manager'
 cask 'vagrant'
 cask 'virtualbox'
 
-tap caskroom/versions
+tap 'caskroom/versions'
 cask 'java6'
 cask 'java7'
 cask 'sublime-text'
@@ -56,13 +54,14 @@ brew 'mongodb'
 brew 'nmap'
 brew 'node'
 brew 'npm'
+brew 'python3'
 brew 'vcsh'
 brew 'vim'
 brew 'zsh'
 
 # App Store applications
-appstore Dash
-appstore Graphic
-appstore Kaleidoscope
-appstore Pocket
-appstore Xcode
+#appstore Dash
+#appstore Graphic
+#appstore Kaleidoscope
+#appstore Pocket
+#appstore Xcode
