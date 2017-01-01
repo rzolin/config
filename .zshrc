@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -83,6 +84,7 @@ function brewUpgrade () {
    brew upgrade
    for c in `brew cask list`; do ! brew cask info $c | grep -qF 'Not installed' || brew cask install $c; done
    brew cleanup
+   brew cask cleanup
 }
 
 alias drm="docker rm"
@@ -115,7 +117,6 @@ alias vimNginx="sudo vim /usr/local/etc/nginx/nginx.conf"
 alias nginxRestart="sudo nginx -s stop; sudo nginx;"
 alias startPonyDebugger="ponyd serve --listen-interface=127.0.0.1"
 alias startATServer='cd ~/Projects/ArmorText/Server/armortext-server-sandbox-spring-boot/; vagrant up; vagrant ssh'
-alias -='cd -'
 alias cdLT='cd /Users/rzolin/Projects/Web/LittleTouches'
 alias runAT='cd ~/Projects/ArmorText/Server;  mvn clean install -DskipTests && mvn spring-boot:run -pl armortext-server-base-app'
 alias cdATMessenger='cd ~/Projects/ArmorText/IOS/Messenger'
@@ -137,6 +138,7 @@ alias drmi='docker rmi -f'
 alias drun='docker run -itPp 3000:3000'
 alias vca='vcsh config add'
 alias vcc='vcsh config commit'
+alias F="fold -w 80 -s"
 #}}}
 
 
