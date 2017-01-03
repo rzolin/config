@@ -37,7 +37,6 @@ cask 'java7'
 cask 'sublime-text'
 
 # Other Homebrew packages
-brew 'android-sdk'
 brew 'autojump'
 brew 'boot2docker'
 brew 'chisel'
